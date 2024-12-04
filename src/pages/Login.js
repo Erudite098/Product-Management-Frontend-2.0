@@ -23,7 +23,18 @@ function Login() {
       localStorage.setItem('token', token);
       setEmail('');
       setPassword('');
-      navigate('/dashboard' , { replace: true });
+      // navigate('/dashboard' , { replace: true });
+
+      const role = response.data.role;
+      console.log("user is", response.data.role);
+      if (role === "admin") {
+        console.log("user is admin");
+        navigate("/dashboard", { replace: true });
+      } else if (role === "user") {
+        console.log("user is user");
+        navigate("/frontstore", { replace: true });
+      }
+   
     } catch (error) {
       setIsLoading(false);
 
@@ -44,7 +55,7 @@ function Login() {
         setErrorMessage('Network error. Please check your internet connection.');
       } else {
         // Something else caused the error
-        setErrorMessage('An unexpected error occurred.');
+        setErrorMessage('An unexpected error occurred.', error.message);
       }
 
       console.log(error);
@@ -92,6 +103,10 @@ function Login() {
             {isLoading ? 'Logging in...' : 'Login'}
           </button>
           {errorMessage && <p className="text-danger mt-3">{errorMessage}</p>}
+
+          <p className="text-center mt-3">
+            Don't have an account? <a href="/register">Sign up</a>
+          </p>
         </form>
       </div>
     </div>

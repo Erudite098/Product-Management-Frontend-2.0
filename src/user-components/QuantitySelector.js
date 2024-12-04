@@ -8,14 +8,14 @@ function QuantitySelector() {
   const decrement = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
   return (
-    <ButtonGroup style={{ maxWidth: "200px" }}>
-      <Button variant="outline-primary" onClick={decrement}>
+    <ButtonGroup style={{ maxWidth: "200px" }} size="sm">
+      <Button variant="outline-success" onClick={decrement}>
         -
       </Button>
       <Button variant="light" disabled>
         {quantity}
       </Button>
-      <Button variant="outline-primary" onClick={increment}>
+      <Button variant="outline-success" onClick={increment}>
         +
       </Button>
     </ButtonGroup>

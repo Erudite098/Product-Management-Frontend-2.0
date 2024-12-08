@@ -1,6 +1,6 @@
 import {Card, Button} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import "../Styles/User.css";
+import "../Styles/App.css";
 
 
 function ProductCard({ product }) {

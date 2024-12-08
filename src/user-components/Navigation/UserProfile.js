@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Nav } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
+import { CartContext } from '../../CartContext';
 
 function UserProfile() {
+    const { logout } = useContext(CartContext);
     const [showLogout, setShowLogout] = useState(false);
+
+    const handleLogout = () => {
+        logout(); 
+    };
 
     const toggleLogout = () => {
         setShowLogout((prevState) => !prevState);
@@ -30,7 +36,7 @@ function UserProfile() {
                         zIndex: 1000, // Ensures it appears above other elements
                     }}
                 >
-                    <Nav.Link href="/" className="text-dark text-decoration-none">
+                    <Nav.Link href="/" className="text-dark text-decoration-none" onClick={handleLogout}>
                         Logout
                     </Nav.Link>
                 </div>

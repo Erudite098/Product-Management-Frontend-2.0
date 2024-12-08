@@ -1,7 +1,13 @@
 import React from 'react';
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { useContext } from 'react';
+import { CartContext } from '../CartContext';
+import { Link } from 'react-router-dom';
 
 function CheckoutPage() {
+
+    const {clearCart} = useContext(CartContext);
+
     return (
         <div className="py-5">
             <Container
@@ -17,16 +23,16 @@ function CheckoutPage() {
                     {/* Shipping Details */}
                     <h4 className="mb-3">Shipping Details</h4>
                     <Row>
-                        <Col md={6} className="mb-3">
+                        <Col md={6} className="mb-3" >
                             <Form.Group controlId="formFullName">
                                 <Form.Label>Full Name</Form.Label>
-                                <Form.Control type="text" placeholder="Enter your full name" />
+                                <Form.Control type="text" placeholder="Enter your full name" required/>
                             </Form.Group>
                         </Col>
                         <Col md={6} className="mb-3">
                             <Form.Group controlId="formPhone">
                                 <Form.Label>Phone Number</Form.Label>
-                                <Form.Control type="text" placeholder="Enter your phone number" />
+                                <Form.Control type="text" placeholder="Enter your phone number" required/>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -34,7 +40,7 @@ function CheckoutPage() {
                         <Col md={12} className="mb-3">
                             <Form.Group controlId="formAddress">
                                 <Form.Label>Address</Form.Label>
-                                <Form.Control type="text" placeholder="Enter your shipping address" />
+                                <Form.Control type="text" placeholder="Enter your shipping address" required />
                             </Form.Group>
                         </Col>
                     </Row>
@@ -42,19 +48,19 @@ function CheckoutPage() {
                         <Col md={6} className="mb-3">
                             <Form.Group controlId="formCity">
                                 <Form.Label>City</Form.Label>
-                                <Form.Control type="text" placeholder="City" />
+                                <Form.Control type="text" placeholder="City" required/>
                             </Form.Group>
                         </Col>
                         <Col md={3} className="mb-3">
                             <Form.Group controlId="formState">
                                 <Form.Label>State</Form.Label>
-                                <Form.Control type="text" placeholder="State" />
+                                <Form.Control type="text" placeholder="State" required />
                             </Form.Group>
                         </Col>
                         <Col md={3} className="mb-3">
                             <Form.Group controlId="formZipCode">
                                 <Form.Label>Zip Code</Form.Label>
-                                <Form.Control type="text" placeholder="Zip Code" />
+                                <Form.Control type="text" placeholder="Zip Code" required/>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -75,6 +81,7 @@ function CheckoutPage() {
                     {/* Submit Button */}
                     <div className="text-center mt-4">
                         <Button
+                            onClick={() => clearCart()}
                             variant="success"
                             style={{
                                 width: '100%',

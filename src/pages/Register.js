@@ -37,7 +37,7 @@ function Register () {
         try {
             const response = await axios.post('/register', formData);
             console.log('Registration successful:', response.data);
-            setErrors({}); // Clear errors on success
+            setErrors({}); 
         } catch (error) {
             if (error.response && error.response.data.errors) {
                 setErrors(error.response.data.errors); // Set validation errors

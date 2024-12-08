@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
+  color: #272422;
 }
 
 .custom-container {
@@ -48,6 +49,17 @@ body {
 
 .custom-table td {
   vertical-align: middle;
-  /* text-align: center; */
   padding: 10px 0 !important;
+}
+
+/* Product Card */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  border: 2px solid #28a745; 
+  background-color: #f8f9fa; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }

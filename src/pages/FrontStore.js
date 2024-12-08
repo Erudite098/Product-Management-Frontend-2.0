@@ -57,7 +57,7 @@
 import '../Styles/App.css'; 
 import '../Styles/NavigationBar.css'; 
 import { Container } from 'react-bootstrap';
-import ProductCatalog2 from "../user-components/ProductCatalog2";
+import ProductCatalog2 from "../user-components/ProductCatalog";
 import Filterable from '../user-components/Filterable';
 import NavigationBar from '../user-components/Navigation/NavigationBar';
 import SearchBar from '../user-components/Navigation/SearchBar';

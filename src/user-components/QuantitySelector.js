@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
-
-function QuantitySelector() {
-  const [quantity, setQuantity] = useState(1);
-
+ 
+function QuantitySelector({quantity, setQuantity}) {
+ 
   const increment = () => setQuantity(quantity + 1);
   const decrement = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
